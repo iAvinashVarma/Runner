@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RunnerCLI
+namespace APIOperator.Interface
 {
-	class Program
+	public interface IOperation
 	{
-		static void Main(string[] args)
-		{
-		}
+		void Run();
 	}
 }

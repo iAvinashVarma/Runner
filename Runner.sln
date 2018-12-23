@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunnerCLI", "RunnerCLI\RunnerCLI.csproj", "{437AD7DF-21EA-47F8-B0F0-B6CB5AECFEFC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{CAAF929E-9E6E-4181-BF0D-FDA58175454B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunnerCLI", "Client\RunnerCLI\RunnerCLI.csproj", "{437AD7DF-21EA-47F8-B0F0-B6CB5AECFEFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Middle", "Middle", "{8A0855D4-6F48-4B13-A751-129E52992D26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunnerBLL", "Middle\RunnerBLL\RunnerBLL.csproj", "{588A1E39-4C12-46EA-9645-6721E7E94895}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reflector", "Reflector", "{967158EE-102E-4DA7-A8A4-D1A50AD8F87A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIOperator", "Reflector\APIOperator\APIOperator.csproj", "{4B89CE71-D9BB-4CBE-B1F4-644D139925EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSynchronizer", "Reflector\DatabaseSynchronizer\DatabaseSynchronizer.csproj", "{E7983699-2F77-498A-954B-1EE24C9EE5A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +27,27 @@ Global
 		{437AD7DF-21EA-47F8-B0F0-B6CB5AECFEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{437AD7DF-21EA-47F8-B0F0-B6CB5AECFEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{437AD7DF-21EA-47F8-B0F0-B6CB5AECFEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588A1E39-4C12-46EA-9645-6721E7E94895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588A1E39-4C12-46EA-9645-6721E7E94895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588A1E39-4C12-46EA-9645-6721E7E94895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588A1E39-4C12-46EA-9645-6721E7E94895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B89CE71-D9BB-4CBE-B1F4-644D139925EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B89CE71-D9BB-4CBE-B1F4-644D139925EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B89CE71-D9BB-4CBE-B1F4-644D139925EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B89CE71-D9BB-4CBE-B1F4-644D139925EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7983699-2F77-498A-954B-1EE24C9EE5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7983699-2F77-498A-954B-1EE24C9EE5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7983699-2F77-498A-954B-1EE24C9EE5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7983699-2F77-498A-954B-1EE24C9EE5A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{437AD7DF-21EA-47F8-B0F0-B6CB5AECFEFC} = {CAAF929E-9E6E-4181-BF0D-FDA58175454B}
+		{588A1E39-4C12-46EA-9645-6721E7E94895} = {8A0855D4-6F48-4B13-A751-129E52992D26}
+		{4B89CE71-D9BB-4CBE-B1F4-644D139925EF} = {967158EE-102E-4DA7-A8A4-D1A50AD8F87A}
+		{E7983699-2F77-498A-954B-1EE24C9EE5A1} = {967158EE-102E-4DA7-A8A4-D1A50AD8F87A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D90CE9FA-E170-476E-BC19-A9B0DE75E613}

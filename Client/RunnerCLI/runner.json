@@ -1,0 +1,24 @@
+{
+	"preRunner": {
+		"add": []
+	},
+	"runner": {
+		"add": [
+			{
+				"process": "APIOperator",
+				"type": "APIOperator.Operate.APIWorker,APIOperator",
+				"enable": "true",
+				"sequence": "2"
+			},
+			{
+				"process": "DatabaseSynchronizer",
+				"type": "DatabaseSynchronizer.Synchronize.MSSQLToMongo,DatabaseSynchronizer",
+				"enable": "true",
+				"sequence": "1"
+			}
+		]
+	},
+	"postRunner": {
+		"add": []
+	}
+}
