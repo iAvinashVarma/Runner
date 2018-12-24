@@ -47,7 +47,6 @@
     <Compile Include="Concrete\EmployeeSynchronizer.cs" />
     <Compile Include="Concrete\StudentSynchronizer.cs" />
     <Compile Include="Concrete\Synchronizer.cs" />
-    <Compile Include="Interface\ISynchronizer.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Person.cs" />

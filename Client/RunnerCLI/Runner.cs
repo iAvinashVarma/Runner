@@ -34,7 +34,7 @@ namespace RunnerCLI
 				{
 					if (ProcessChecker.Instance.IsSingleInstance(process))
 					{
-						var runnerWork = RunnerWork<RunnerData>.Instance;
+						RunnerWork<RunnerData> runnerWork = RunnerWork<RunnerData>.Instance;
 						if (runner.PreRunner != null && runner.PreRunner.PreRunnerDataList != null)
 						{
 							RunnerData runnerAssembly = runner.PreRunner.PreRunnerDataList.FirstOrDefault(r => r.Enable && r.Process.Equals(process, StringComparison.OrdinalIgnoreCase));

@@ -14,11 +14,14 @@ namespace RunnerBLL.Design.Factory
 			{
 				case FileType.XML:
 					break;
+
 				case FileType.JSON:
 					deserializer = new JsonDeserializer<T>(filePath);
 					break;
+
 				case FileType.CSV:
 					break;
+
 				default:
 					break;
 			}

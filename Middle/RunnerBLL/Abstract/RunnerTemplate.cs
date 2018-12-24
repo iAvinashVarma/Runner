@@ -24,7 +24,7 @@ namespace RunnerBLL.Abstract
 			_runnerProcess.Hashtable = _hashtable;
 			if (_runnerProcess.Validate())
 			{
-				_runnerProcess.Start();
+				_runnerProcess.Run();
 			}
 		}
 	}

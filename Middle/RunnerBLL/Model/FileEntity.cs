@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 
 namespace RunnerBLL.Model
@@ -18,28 +16,19 @@ namespace RunnerBLL.Model
 			get; set;
 		}
 
-		public string DirectoryFullPath
-		{
-			get { return Path.GetDirectoryName(FileFullPath); }
-		}
+		public string DirectoryFullPath => Path.GetDirectoryName(FileFullPath);
 
-		public string FileNameWithoutExtension
-		{
-			get { return Path.GetFileNameWithoutExtension(FileFullPath); }
-		}
+		public string FileNameWithoutExtension => Path.GetFileNameWithoutExtension(FileFullPath);
 
-		public string FileExtension
-		{
-			get { return Path.GetExtension(FileFullPath); }
-		}
+		public string FileExtension => Path.GetExtension(FileFullPath);
 
 		public string FileData
 		{
 			get
 			{
-				var sb = new StringBuilder();
-				var fileStream = new FileStream(FileFullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-				using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+				StringBuilder sb = new StringBuilder();
+				FileStream fileStream = new FileStream(FileFullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+				using (StreamReader streamReader = new StreamReader(fileStream, Encoding.UTF8))
 				{
 					string line;
 					while ((line = streamReader.ReadLine()) != null)
@@ -51,10 +40,7 @@ namespace RunnerBLL.Model
 			}
 		}
 
-		public bool IsFileExists
-		{
-			get { return File.Exists(FileFullPath); }
-		}
+		public bool IsFileExists => File.Exists(FileFullPath);
 
 		public FileType FileType
 		{

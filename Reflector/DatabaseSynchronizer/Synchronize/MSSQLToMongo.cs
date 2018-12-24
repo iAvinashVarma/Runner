@@ -1,14 +1,7 @@
 ﻿using DatabaseSynchronizer.Concrete;
-using DatabaseSynchronizer.Interface;
-using log4net;
+using RunnerBLL.Concrete;
 using RunnerBLL.Interface;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DatabaseSynchronizer.Synchronize
 {
@@ -16,13 +9,13 @@ namespace DatabaseSynchronizer.Synchronize
 	{
 		public Hashtable Hashtable { get; set; }
 
-		public void Start()
+		public void Run()
 		{
-			var synchronizer = Synchronizer.Instance;
+			var synchronizer = new Synchronizer();
 			synchronizer.RegisterObserver(new CompanySynchronizer());
 			synchronizer.RegisterObserver(new EmployeeSynchronizer());
 			synchronizer.RegisterObserver(new StudentSynchronizer());
-			synchronizer.Run();
+			synchronizer.Run(RunType.Parallel);
 		}
 
 		public bool Validate()

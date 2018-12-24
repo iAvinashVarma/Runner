@@ -55,10 +55,12 @@
     <Compile Include="Concrete\RunnerDecorator.cs" />
     <Compile Include="Concrete\RunnerProcess.cs" />
     <Compile Include="Design\Factory\AssemblyFactory.cs" />
+    <Compile Include="Concrete\RunnerBase.cs" />
     <Compile Include="Extension\Enumerables.cs" />
     <Compile Include="Extension\Generic.cs" />
     <Compile Include="Extension\Parameter.cs" />
     <Compile Include="Interface\IDeserializer.cs" />
+    <Compile Include="Interface\IRunnerObserver.cs" />
     <Compile Include="Interface\IRunnerDecorator.cs" />
     <Compile Include="Interface\IRunnerProcess.cs" />
     <Compile Include="Model\FileType.cs" />

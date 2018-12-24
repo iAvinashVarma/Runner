@@ -1,5 +1,4 @@
-﻿using RunnerBLL.Abstract;
-using RunnerBLL.Model;
+﻿using RunnerBLL.Model;
 
 namespace RunnerBLL.Interface
 {

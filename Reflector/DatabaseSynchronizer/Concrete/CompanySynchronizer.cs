@@ -1,14 +1,10 @@
-﻿using DatabaseSynchronizer.Interface;
-using log4net;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using log4net;
+using RunnerBLL.Interface;
 using System.Reflection;
-using System.Text;
 
 namespace DatabaseSynchronizer.Concrete
 {
-	public class CompanySynchronizer : ISynchronizer
+	public class CompanySynchronizer : IRunnerObserver
 	{
 		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 

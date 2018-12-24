@@ -100,8 +100,8 @@ namespace RunnerBLL.Extension
 
 		public static string Validate(this Hashtable Hashtable, string key, bool isPath = false, string defaultValue = "")
 		{
-			var hash = Hashtable[key];
-			var value = string.Empty;
+			object hash = Hashtable[key];
+			string value = string.Empty;
 			if (hash != null)
 			{
 				value = isPath ? Path.GetFullPath(hash.ToString()) : hash.ToString();

@@ -8,7 +8,9 @@ namespace RunnerBLL.Design.Factory
 {
 	public class AssemblyFactory : SingletonBase<AssemblyFactory>
 	{
-		private AssemblyFactory() { }
+		private AssemblyFactory()
+		{
+		}
 
 		public T GetClass<T>(string className, string returnType)
 		{
@@ -42,17 +44,17 @@ namespace RunnerBLL.Design.Factory
 
 		public T LoadAssembly<T>(string assemblyName, string typeName)
 		{
-			var currentFolder = string.Format("{0}", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-			var assembly = Assembly.LoadFrom(Path.Combine(currentFolder, string.Format("{0}.dll", assemblyName)));
+			string currentFolder = string.Format("{0}", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+			Assembly assembly = Assembly.LoadFrom(Path.Combine(currentFolder, string.Format("{0}.dll", assemblyName)));
 			return GetInstance<T>(assembly, typeName);
 		}
 
 		public T GetInstance<T>(Assembly assembly, string typeName)
 		{
-			var type = assembly.GetType(typeName, false, true);
+			Type type = assembly.GetType(typeName, false, true);
 			if (null != type.GetInterface(typeof(T).FullName))
 			{
-				var instance = (T)Activator.CreateInstance(type);
+				T instance = (T)Activator.CreateInstance(type);
 				return instance;
 			}
 			return default(T);

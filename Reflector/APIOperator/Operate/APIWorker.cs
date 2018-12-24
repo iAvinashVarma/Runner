@@ -1,12 +1,7 @@
 ﻿using APIOperator.Concrete;
-using log4net;
+using RunnerBLL.Concrete;
 using RunnerBLL.Interface;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 
 namespace APIOperator.Operate
 {
@@ -14,9 +9,9 @@ namespace APIOperator.Operate
 	{
 		public Hashtable Hashtable { get; set; }
 
-		public void Start()
+		public void Run()
 		{
-			var operation = Operation.Instance;
+			var operation = new Operation();
 			operation.RegisterObserver(new RegistrationOperation());
 			operation.RegisterObserver(new LoginOperation());
 			operation.Run();

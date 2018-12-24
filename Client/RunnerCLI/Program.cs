@@ -16,7 +16,7 @@ namespace RunnerCLI
 			}
 			catch (Exception ex)
 			{
-				logger.Error(ex);		
+				logger.Error(ex);
 			}
 			Console.ReadLine();
 		}

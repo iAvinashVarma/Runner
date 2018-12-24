@@ -2,7 +2,6 @@
 using RunnerBLL.Design;
 using RunnerBLL.Design.Factory;
 using RunnerBLL.Extension;
-using RunnerBLL.Model;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -47,7 +46,7 @@ namespace RunnerBLL.Concrete
 		{
 			_entities.ForEach(e =>
 			{
-				var runnerType = string.Format("{0}", e);
+				string runnerType = string.Format("{0}", e);
 				if (e != null && !string.IsNullOrEmpty(runnerType))
 				{
 					A currentProcess = AssemblyFactory.Instance.LoadAssembly<A>(runnerType);

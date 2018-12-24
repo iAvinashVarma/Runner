@@ -46,7 +46,6 @@
     <Compile Include="Concrete\LoginOperation.cs" />
     <Compile Include="Concrete\Operation.cs" />
     <Compile Include="Concrete\RegistrationOperation.cs" />
-    <Compile Include="Interface\IOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Operate\APIWorker.cs" />
   </ItemGroup>

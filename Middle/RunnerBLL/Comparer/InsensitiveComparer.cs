@@ -17,7 +17,6 @@ namespace RunnerBLL.Comparer
 			{
 				return true;
 			}
-
 			else
 			{
 				return false;

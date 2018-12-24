@@ -1,9 +1,5 @@
 ﻿using RunnerBLL.Design;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace RunnerBLL.Checker
 {
@@ -13,8 +9,8 @@ namespace RunnerBLL.Checker
 		{
 			get
 			{
-				var assembly = typeof(AssemblyChecker).Assembly;
-				var attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
+				System.Reflection.Assembly assembly = typeof(AssemblyChecker).Assembly;
+				GuidAttribute attribute = (GuidAttribute)assembly.GetCustomAttributes(typeof(GuidAttribute), true)[0];
 				return attribute.Value;
 			}
 		}
