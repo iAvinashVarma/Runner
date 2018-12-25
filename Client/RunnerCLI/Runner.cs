@@ -1,4 +1,5 @@
-﻿using RunnerBLL.Concrete;
+﻿using RunnerBLL.Checker;
+using RunnerBLL.Concrete;
 using RunnerBLL.Design;
 using RunnerBLL.Extension;
 using System.Collections;
@@ -14,6 +15,7 @@ namespace RunnerCLI
 
 		private void Run(Hashtable hashtable)
 		{
+			CultureChecker.Instance.Validator(hashtable);
 			ReflectorProcess.Instance.Run(hashtable);
 		}
 	}

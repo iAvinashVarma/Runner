@@ -37,7 +37,13 @@ namespace RunnerBLL.Concrete
 			}
 		}
 
-		private bool IsSingleProcess => _hashtable.ContainsKey(Constants.Process);
+		private bool IsSingleProcess
+		{
+			get
+			{
+				return _hashtable.ContainsKey(Constants.Process);
+			}
+		}
 
 		private void RunSingleProcess(RunnerEntity runnerEntity)
 		{

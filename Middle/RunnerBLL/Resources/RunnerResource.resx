@@ -120,6 +120,12 @@
   <data name="ApplicationAlreadyRunning" xml:space="preserve">
     <value>Application is already running.</value>
   </data>
+  <data name="CultureSet" xml:space="preserve">
+    <value>Culture is set to: {0}.</value>
+  </data>
+  <data name="GivenCulture" xml:space="preserve">
+    <value>Given Culture: {0}.</value>
+  </data>
   <data name="GivenProcess" xml:space="preserve">
     <value>Given Process: {0}.</value>
   </data>

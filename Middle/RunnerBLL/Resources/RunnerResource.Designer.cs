@@ -70,6 +70,24 @@ namespace RunnerBLL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Culture is set to: {0}..
+        /// </summary>
+        public static string CultureSet {
+            get {
+                return ResourceManager.GetString("CultureSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given Culture: {0}..
+        /// </summary>
+        public static string GivenCulture {
+            get {
+                return ResourceManager.GetString("GivenCulture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Given Process: {0}..
         /// </summary>
         public static string GivenProcess {
