@@ -50,6 +50,7 @@
     <Compile Include="Abstract\Deserializer.cs" />
     <Compile Include="Abstract\RunnerTemplate.cs" />
     <Compile Include="Checker\AssemblyChecker.cs" />
+    <Compile Include="Checker\CultureChecker.cs" />
     <Compile Include="Checker\ProcessChecker.cs" />
     <Compile Include="Comparer\InsensitiveComparer.cs" />
     <Compile Include="Concrete\JsonDeserializer.cs" />
