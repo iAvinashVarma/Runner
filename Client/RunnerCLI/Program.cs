@@ -1,6 +1,9 @@
 ﻿using log4net;
 using System;
 using System.Reflection;
+using System.Resources;
+
+[assembly: NeutralResourcesLanguage("en")]
 
 namespace RunnerCLI
 {

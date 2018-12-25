@@ -1,5 +1,6 @@
 ﻿using log4net;
 using RunnerBLL.Interface;
+using RunnerBLL.Resources.Reflector;
 using System.Reflection;
 
 namespace DatabaseSynchronizer.Concrete
@@ -10,7 +11,7 @@ namespace DatabaseSynchronizer.Concrete
 
 		public void Run()
 		{
-			logger.Info("Synchronize Student");
+			logger.Info(DatabaseSynchronizerResource.StudentSynchronizer);
 		}
 	}
 }

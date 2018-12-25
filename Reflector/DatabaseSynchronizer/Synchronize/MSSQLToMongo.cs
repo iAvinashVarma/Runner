@@ -11,7 +11,7 @@ namespace DatabaseSynchronizer.Synchronize
 
 		public void Run()
 		{
-			var synchronizer = new Synchronizer();
+			Synchronizer synchronizer = new Synchronizer();
 			synchronizer.RegisterObserver(new CompanySynchronizer());
 			synchronizer.RegisterObserver(new EmployeeSynchronizer());
 			synchronizer.RegisterObserver(new StudentSynchronizer());

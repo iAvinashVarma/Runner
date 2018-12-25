@@ -1,5 +1,6 @@
 ﻿using log4net;
 using RunnerBLL.Interface;
+using RunnerBLL.Resources.Reflector;
 using System.Reflection;
 
 namespace APIOperator.Concrete
@@ -10,7 +11,7 @@ namespace APIOperator.Concrete
 
 		public void Run()
 		{
-			logger.Info("Registration Operation");
+			logger.Info(APIOperatorResource.RegistrationOperation);
 		}
 	}
 }

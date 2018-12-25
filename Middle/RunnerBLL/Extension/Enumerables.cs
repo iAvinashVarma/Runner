@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace RunnerBLL.Extension
 {
 	public static class Enumerables
 	{
-		public static void ForEach<T>(this IEnumerable<T> @enumeration, Action<T> action)
+		public static void ForEach<TSource>(this IEnumerable<TSource> @enumeration, Action<TSource> action)
 		{
-			foreach (T item in @enumeration)
+			foreach (TSource item in @enumeration)
 			{
 				action(item);
 			}
@@ -17,6 +18,11 @@ namespace RunnerBLL.Extension
 		{
 			action.Invoke(null);
 			return @this;
+		}
+
+		public static string ToCSV<TSource>(this IEnumerable<TSource> @enumeration, Func<TSource, string> selector)
+		{
+			return string.Join(", ", @enumeration.Select(selector).ToArray());
 		}
 	}
 }

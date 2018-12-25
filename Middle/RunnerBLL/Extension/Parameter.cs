@@ -98,7 +98,7 @@ namespace RunnerBLL.Extension
 			return string.Empty;
 		}
 
-		public static string Validate(this Hashtable Hashtable, string key, bool isPath = false, string defaultValue = "")
+		public static string GetValue(this Hashtable Hashtable, string key, bool isPath = false, string defaultValue = "")
 		{
 			object hash = Hashtable[key];
 			string value = string.Empty;

@@ -1,5 +1,4 @@
-﻿using RunnerBLL.Design;
-using RunnerBLL.Extension;
+﻿using RunnerBLL.Extension;
 using RunnerBLL.Interface;
 using System.Collections.Generic;
 using System.Linq;

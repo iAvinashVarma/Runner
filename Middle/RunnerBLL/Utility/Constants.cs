@@ -4,6 +4,6 @@
 	{
 		public const string Process = "Process";
 
-		public const string All = "All";
+		public const string AllProcesses = "AllProcesses";
 	}
 }

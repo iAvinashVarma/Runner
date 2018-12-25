@@ -38,6 +38,7 @@
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,8 +53,12 @@
     <Compile Include="Checker\ProcessChecker.cs" />
     <Compile Include="Comparer\InsensitiveComparer.cs" />
     <Compile Include="Concrete\JsonDeserializer.cs" />
+    <Compile Include="Concrete\ReflectorProcess.cs" />
     <Compile Include="Concrete\RunnerDecorator.cs" />
     <Compile Include="Concrete\RunnerProcess.cs" />
+    <Compile Include="Configuration\ApplicationSettings.cs" />
+    <Compile Include="Configuration\FileSettings.cs" />
+    <Compile Include="Configuration\RunSettings.cs" />
     <Compile Include="Design\Factory\AssemblyFactory.cs" />
     <Compile Include="Concrete\RunnerBase.cs" />
     <Compile Include="Extension\Enumerables.cs" />
@@ -69,11 +74,39 @@
     <Compile Include="Design\Factory\DataFactory.cs" />
     <Compile Include="Design\SingletonBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Reflector\APIOperatorResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>APIOperatorResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Reflector\DatabaseSynchronizerResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatabaseSynchronizerResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\RunnerResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RunnerResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utility\Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Reflector\APIOperatorResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>APIOperatorResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Reflector\DatabaseSynchronizerResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DatabaseSynchronizerResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RunnerResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RunnerResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
