@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RunnerBLL.Resources.Reflector {
+namespace DatabaseSynchronizer.Resources {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace RunnerBLL.Resources.Reflector {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class DatabaseSynchronizerResource {
@@ -39,7 +39,7 @@ namespace RunnerBLL.Resources.Reflector {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RunnerBLL.Resources.Reflector.DatabaseSynchronizerResource", typeof(DatabaseSynchronizerResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DatabaseSynchronizer.Resources.DatabaseSynchronizerResource", typeof(DatabaseSynchronizerResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace RunnerBLL.Resources.Reflector {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Synchronize Company.
+        ///   Looks up a localized string similar to Synchronizing Company..
         /// </summary>
         public static string CompanySynchronizer {
             get {
@@ -70,7 +70,7 @@ namespace RunnerBLL.Resources.Reflector {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Synchronize Employee.
+        ///   Looks up a localized string similar to Synchronizing Employee..
         /// </summary>
         public static string EmployeeSynchronizer {
             get {
@@ -79,7 +79,7 @@ namespace RunnerBLL.Resources.Reflector {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Synchronize Student.
+        ///   Looks up a localized string similar to Synchronizing Student..
         /// </summary>
         public static string StudentSynchronizer {
             get {

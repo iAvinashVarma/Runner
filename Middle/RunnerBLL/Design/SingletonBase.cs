@@ -2,7 +2,7 @@
 
 namespace RunnerBLL.Design
 {
-	public abstract class SingletonBase<T> where T : class
+	public abstract class SingletonBase<T> where T : class, new()
 	{
 		private static readonly Lazy<T> instance = new Lazy<T>(() =>
 		{

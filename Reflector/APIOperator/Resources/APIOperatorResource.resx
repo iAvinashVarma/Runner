@@ -117,40 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ApplicationAlreadyRunning" xml:space="preserve">
-    <value>Application is already running.</value>
+  <data name="LoginOperation" xml:space="preserve">
+    <value>Login Operation.</value>
   </data>
-  <data name="ApplicationInfo" xml:space="preserve">
-    <value>Application Name : {0}, Assembly Version : {1}.</value>
-  </data>
-  <data name="CultureSet" xml:space="preserve">
-    <value>Culture is set to: {0}.</value>
-  </data>
-  <data name="GivenCulture" xml:space="preserve">
-    <value>Given Culture: {0}.</value>
-  </data>
-  <data name="GivenProcess" xml:space="preserve">
-    <value>Given Process: {0}.</value>
-  </data>
-  <data name="GivenProcesses" xml:space="preserve">
-    <value>Given Process(s): {0}.</value>
-  </data>
-  <data name="InvalidProcess" xml:space="preserve">
-    <value>Invalid Process.</value>
-  </data>
-  <data name="ProcessAlreadyRunning" xml:space="preserve">
-    <value>{0} process is already running.</value>
-  </data>
-  <data name="ProcessCompleted" xml:space="preserve">
-    <value>{0} process ran successfully.</value>
-  </data>
-  <data name="ProcessesCompleted" xml:space="preserve">
-    <value>{0} process(s) ran successfully.</value>
-  </data>
-  <data name="UnableToRegisterProcess" xml:space="preserve">
-    <value>Unable to register process {0}.</value>
-  </data>
-  <data name="UnableToRegisterProcesses" xml:space="preserve">
-    <value>Unable to register process(s).</value>
+  <data name="RegistrationOperation" xml:space="preserve">
+    <value>Registration Operation.</value>
   </data>
 </root>

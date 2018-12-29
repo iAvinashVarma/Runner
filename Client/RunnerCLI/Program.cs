@@ -1,4 +1,5 @@
 ﻿using log4net;
+using RunnerBLL.Concrete;
 using System;
 using System.Reflection;
 using System.Resources;
@@ -15,13 +16,12 @@ namespace RunnerCLI
 		{
 			try
 			{
-				Runner.Instance.Run(args);
+				RunnerProcess.Instance.Run(args);
 			}
 			catch (Exception ex)
 			{
 				logger.Error(ex);
 			}
-			Console.ReadLine();
 		}
 	}
 }

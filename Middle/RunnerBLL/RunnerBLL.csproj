@@ -50,13 +50,33 @@
     <Compile Include="Abstract\Deserializer.cs" />
     <Compile Include="Abstract\RunnerTemplate.cs" />
     <Compile Include="Checker\AssemblyChecker.cs" />
-    <Compile Include="Checker\CultureChecker.cs" />
+    <Compile Include="Configurator\CultureConfigurator.cs" />
+    <Compile Include="Configurator\LoggerConfigurator.cs" />
+    <Compile Include="Configurator\RunnerConfigurator.cs" />
+    <Compile Include="Interface\IRunnerConfigurator.cs" />
+    <Compile Include="Logger\Appender\RollingFileAppender.cs" />
+    <Compile Include="Logger\Util\PatternString.cs" />
+    <Compile Include="Resources\Logger\LoggerResource.es-ES.Designer.cs">
+      <DependentUpon>LoggerResource.es-ES.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\RunnerResource.es-ES.Designer.cs">
+      <DependentUpon>RunnerResource.es-ES.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Validator\AssemlyValidator.cs" />
+    <Compile Include="Validator\RunnerValidator.cs" />
+    <Compile Include="Validator\CultureValidator.cs" />
+    <Compile Include="Validator\LoggerValidator.cs" />
     <Compile Include="Checker\ProcessChecker.cs" />
     <Compile Include="Comparer\InsensitiveComparer.cs" />
     <Compile Include="Concrete\JsonDeserializer.cs" />
     <Compile Include="Concrete\ReflectorProcess.cs" />
     <Compile Include="Concrete\RunnerDecorator.cs" />
     <Compile Include="Concrete\RunnerProcess.cs" />
+    <Compile Include="Concrete\RunnerWork.cs" />
     <Compile Include="Configuration\ApplicationSettings.cs" />
     <Compile Include="Configuration\FileSettings.cs" />
     <Compile Include="Configuration\RunSettings.cs" />
@@ -69,21 +89,19 @@
     <Compile Include="Interface\IRunnerObserver.cs" />
     <Compile Include="Interface\IRunnerDecorator.cs" />
     <Compile Include="Interface\IRunnerProcess.cs" />
+    <Compile Include="Interface\IRunnerValidator.cs" />
+    <Compile Include="Logger\Layout\CustomPatternLayout.cs" />
+    <Compile Include="Logger\LogChecker.cs" />
     <Compile Include="Model\FileType.cs" />
     <Compile Include="Model\FileEntity.cs" />
     <Compile Include="Model\RunnerEntity.cs" />
     <Compile Include="Design\Factory\DataFactory.cs" />
     <Compile Include="Design\SingletonBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Reflector\APIOperatorResource.Designer.cs">
+    <Compile Include="Resources\Logger\LoggerResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>APIOperatorResource.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Reflector\DatabaseSynchronizerResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseSynchronizerResource.resx</DependentUpon>
+      <DependentUpon>LoggerResource.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\RunnerResource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -96,18 +114,23 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Reflector\APIOperatorResource.resx">
+    <EmbeddedResource Include="Resources\Logger\LoggerResource.es-ES.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>APIOperatorResource.Designer.cs</LastGenOutput>
+      <LastGenOutput>LoggerResource.es-ES.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Reflector\DatabaseSynchronizerResource.resx">
+    <EmbeddedResource Include="Resources\Logger\LoggerResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>DatabaseSynchronizerResource.Designer.cs</LastGenOutput>
+      <LastGenOutput>LoggerResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RunnerResource.es-ES.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>RunnerResource.es-ES.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\RunnerResource.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>RunnerResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

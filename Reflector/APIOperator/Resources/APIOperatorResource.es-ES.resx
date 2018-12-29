@@ -118,9 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="LoginOperation" xml:space="preserve">
-    <value>Login Operation</value>
+    <value>Operación de inicio de sesión.</value>
   </data>
   <data name="RegistrationOperation" xml:space="preserve">
-    <value>Registration Operation</value>
+    <value>Operación de registro.</value>
   </data>
 </root>

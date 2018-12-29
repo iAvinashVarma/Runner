@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -8,10 +9,6 @@ namespace RunnerBLL.Design.Factory
 {
 	public class AssemblyFactory : SingletonBase<AssemblyFactory>
 	{
-		private AssemblyFactory()
-		{
-		}
-
 		public T GetClass<T>(string className, string returnType)
 		{
 			return (T)Activator.CreateInstance(Type.GetType(Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name.EndsWith(className)).FirstOrDefault().FullName), new object[] { returnType });
@@ -58,6 +55,29 @@ namespace RunnerBLL.Design.Factory
 				return instance;
 			}
 			return default(T);
+		}
+
+		public IEnumerable<TSource> GetInstances<TSource, TExclude>()
+		{
+			return GetConcreteTypes<TSource>()
+				.Where(f => null != f.GetInterface(typeof(TSource).FullName) && f.Name != typeof(TExclude).Name)
+				.Select(s => (TSource)Activator.CreateInstance(s));
+		}
+
+		public IEnumerable<T> GetInstances<T>()
+		{
+			return GetConcreteTypes<T>()
+				.Where(f => null != f.GetInterface(typeof(T).FullName))
+				.Select(s => (T)Activator.CreateInstance(s));
+		}
+
+		public IEnumerable<Type> GetConcreteTypes<T>()
+		{
+			var type = typeof(T);
+			var types = AppDomain.CurrentDomain.GetAssemblies()
+				.SelectMany(s => s.GetTypes())
+				.Where(t => type.IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
+			return types;
 		}
 	}
 }

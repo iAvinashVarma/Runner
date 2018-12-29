@@ -1,6 +1,6 @@
-﻿using log4net;
+﻿using APIOperator.Resources;
+using log4net;
 using RunnerBLL.Interface;
-using RunnerBLL.Resources.Reflector;
 using System.Reflection;
 
 namespace APIOperator.Concrete

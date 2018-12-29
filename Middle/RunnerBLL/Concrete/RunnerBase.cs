@@ -1,7 +1,9 @@
 ﻿using RunnerBLL.Extension;
 using RunnerBLL.Interface;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace RunnerBLL.Concrete
@@ -65,16 +67,18 @@ namespace RunnerBLL.Concrete
 
 		private void ParallelRun()
 		{
+			var currentCulture = Thread.CurrentThread.CurrentUICulture;
 			List<Task> createdTasks = new List<Task>();
 			_runnerObservers.ForEach(t =>
 			{
-				createdTasks.Add(Task.Factory.StartNew(() =>
+				createdTasks.Add(Task.Factory.StartNew((cul) =>
 				{
+					var culture = cul as CultureInfo;
 					if (t != null)
 					{
 						t.Run();
 					}
-				}));
+				}, currentCulture));
 			});
 
 			Task.WaitAll(createdTasks.ToArray());
