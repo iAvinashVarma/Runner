@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace RunnerBLL.Logger.Appender
 {
@@ -16,7 +13,7 @@ namespace RunnerBLL.Logger.Appender
 		/// </summary>
 		public override void ActivateOptions()
 		{
-			if (string.IsNullOrEmpty(this.File))
+			if (string.IsNullOrEmpty(File))
 			{
 				File = Path.ChangeExtension(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, applicationName), "log");
 			}

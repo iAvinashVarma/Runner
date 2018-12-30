@@ -9,6 +9,8 @@ namespace RunnerBLL.Configurator
 {
 	public class CultureConfigurator : IRunnerConfigurator
 	{
+		public int ConfigureSequence => 2;
+
 		public void Configure(Hashtable hashtable)
 		{
 			if (hashtable.ContainsKey(Constants.Culture))

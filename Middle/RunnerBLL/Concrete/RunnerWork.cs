@@ -3,40 +3,14 @@ using RunnerBLL.Design;
 using RunnerBLL.Design.Factory;
 using RunnerBLL.Extension;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
 namespace RunnerBLL.Concrete
 {
-	public class RunnerWork<T> : SingletonBase<RunnerWork<T>>
+	public class RunnerWork<T> : SingletonObserverBase<RunnerWork<T>, T>
 	{
 		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-		public readonly List<T> Entities = new List<T>();
-
-		public void RegisterObserver(T entity)
-		{
-			if (entity == null)
-			{
-				return;
-			}
-
-			if (!Entities.Contains(entity))
-			{
-				Entities.Add(entity);
-			}
-		}
-
-		public void RegisterObserver(HashSet<T> entities)
-		{
-			entities.ForEach(e =>
-			{
-				if (!Entities.Contains(e))
-				{
-					Entities.Add(e);
-				}
-			});
-		}
 
 		public void Run<P>(Hashtable hashtable)
 		{
@@ -52,7 +26,7 @@ namespace RunnerBLL.Concrete
 					}
 					else
 					{
-						logger.WarnFormat("Issue while running {0}.", e.ToString());
+						logger.WarnFormat("Issue while running {0}.", runnerType);
 					}
 				}
 			});

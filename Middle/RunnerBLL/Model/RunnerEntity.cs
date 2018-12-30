@@ -55,6 +55,12 @@ namespace RunnerBLL.Model
 		[JsonProperty(PropertyName = "sequence")]
 		public int Sequence { get; set; }
 
+		[JsonIgnore]
+		public string TypeName => !string.IsNullOrEmpty(Type) ? Type.IndexOf(',') != -1 ? Type.Split(',')[0] : Type : string.Empty;
+
+		[JsonIgnore]
+		public string AssemblyName => !string.IsNullOrEmpty(Type) ? Type.IndexOf(',') != -1 ? Type.Split(',')[1] : Type.Substring(0, Type.LastIndexOf('.')) : string.Empty;
+
 		public override string ToString()
 		{
 			return Type;

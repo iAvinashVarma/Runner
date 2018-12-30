@@ -7,21 +7,8 @@ namespace RunnerBLL.Logger.Layout
 	{
 		private readonly string line = string.Format("{0}{1}", new string('=', 96), Environment.NewLine);
 
-		public override string Header
-		{
-			get
-			{
-				return line;
-			}
-		}
+		public override string Header => line;
 
-		public override string Footer
-		{
-			get
-			{
-				return line;
-			}
-		}
+		public override string Footer => line;
 	}
-
 }

@@ -2,7 +2,7 @@
 
 namespace RunnerBLL.Interface
 {
-	public interface IRunnerValidator
+	public interface IReflectorValidator
 	{
 		int ValidateSequence { get; }
 

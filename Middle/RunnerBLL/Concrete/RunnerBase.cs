@@ -1,39 +1,31 @@
-﻿using RunnerBLL.Extension;
+﻿using RunnerBLL.Checker;
+using RunnerBLL.Design;
+using RunnerBLL.Design.Factory;
+using RunnerBLL.Extension;
 using RunnerBLL.Interface;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace RunnerBLL.Concrete
 {
-	public class RunnerBase
+	public abstract class RunnerBase : ObserverBase<IRunnerObserver>
 	{
-		private List<IRunnerObserver> _runnerObservers = null;
-
 		public RunnerBase()
 		{
-			_runnerObservers = new List<IRunnerObserver>();
+			var assembly = Assembly.GetCallingAssembly();
+			Attach(AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly));
 		}
 
-		public void RegisterObserver(IRunnerObserver runnerObserver)
+		public RunnerBase(Assembly assembly)
 		{
-			if (!_runnerObservers.Contains(runnerObserver))
-			{
-				_runnerObservers.Add(runnerObserver);
-			}
+			Attach(AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly));
 		}
 
-		public void RegisterObserver(HashSet<IRunnerObserver> runnerObservers)
+		public RunnerBase(IEnumerable<IRunnerObserver> observers)
 		{
-			runnerObservers.ForEach(s =>
-			{
-				if (!_runnerObservers.Any(e => e.Equals(s)))
-				{
-					_runnerObservers.Add(s);
-				}
-			});
+			Attach(observers);
 		}
 
 		public virtual void Run(RunType runType = RunType.Sequential)
@@ -56,7 +48,7 @@ namespace RunnerBLL.Concrete
 
 		private void SequentialRun()
 		{
-			_runnerObservers.ForEach(e =>
+			Entities.ForEach(e =>
 			{
 				if (e != null)
 				{
@@ -67,18 +59,18 @@ namespace RunnerBLL.Concrete
 
 		private void ParallelRun()
 		{
-			var currentCulture = Thread.CurrentThread.CurrentUICulture;
 			List<Task> createdTasks = new List<Task>();
-			_runnerObservers.ForEach(t =>
+			Entities.ForEach(t =>
 			{
-				createdTasks.Add(Task.Factory.StartNew((cul) =>
+				createdTasks.Add(Task.Factory.StartNew(() =>
 				{
-					var culture = cul as CultureInfo;
+					Thread.CurrentThread.CurrentCulture = CultureChecker.Instance.CurrentCulture;
+					Thread.CurrentThread.CurrentUICulture = CultureChecker.Instance.CurrentUICulture;
 					if (t != null)
 					{
 						t.Run();
 					}
-				}, currentCulture));
+				}));
 			});
 
 			Task.WaitAll(createdTasks.ToArray());

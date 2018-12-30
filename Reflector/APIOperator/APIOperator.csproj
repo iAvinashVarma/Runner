@@ -58,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>APIOperatorResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Validator\OperatorValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\APIOperatorResource.es-ES.resx">

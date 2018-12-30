@@ -8,7 +8,7 @@
 
 		public const string Culture = "Culture";
 
-		#endregion
+		#endregion Parameters
 
 		public const string AllProcesses = "AllProcesses";
 	}

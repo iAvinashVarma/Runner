@@ -1,5 +1,4 @@
 ﻿using log4net;
-using RunnerBLL.Checker;
 using RunnerBLL.Configurator;
 using RunnerBLL.Design;
 using RunnerBLL.Extension;
@@ -11,6 +10,8 @@ namespace RunnerBLL.Concrete
 {
 	public class RunnerProcess : SingletonBase<RunnerProcess>
 	{
+		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
 		public void Run(string[] args)
 		{
 			Run(args.GetHashArguments());

@@ -7,20 +7,10 @@ namespace DatabaseSynchronizer.Synchronize
 {
 	public class MSSQLToMongo : IRunnerProcess
 	{
-		public Hashtable Hashtable { get; set; }
-
-		public void Run()
+		public void Run(Hashtable hashtable)
 		{
-			Synchronizer synchronizer = new Synchronizer();
-			synchronizer.RegisterObserver(new CompanySynchronizer());
-			synchronizer.RegisterObserver(new EmployeeSynchronizer());
-			synchronizer.RegisterObserver(new StudentSynchronizer());
+			var synchronizer = new Synchronizer();
 			synchronizer.Run(RunType.Parallel);
-		}
-
-		public bool Validate()
-		{
-			return true;
 		}
 	}
 }

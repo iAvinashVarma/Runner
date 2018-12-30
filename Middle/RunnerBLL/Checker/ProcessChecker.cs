@@ -7,7 +7,7 @@ namespace RunnerBLL.Checker
 {
 	public class ProcessChecker : SingletonBase<ProcessChecker>
 	{
-		private static Mutex _mutex;
+		public static Mutex Mutex { get; set; }
 
 		public bool IsSingleInstance(string processName = "")
 		{
@@ -20,7 +20,7 @@ namespace RunnerBLL.Checker
 			catch (Exception ex)
 			{
 				Debug.WriteLine(ex);
-				_mutex = new Mutex(true, name);
+				Mutex = new Mutex(true, name);
 				result = true;
 			}
 			return result;

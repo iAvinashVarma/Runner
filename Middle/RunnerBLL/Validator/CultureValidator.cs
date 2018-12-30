@@ -1,13 +1,9 @@
 ﻿using log4net;
-using RunnerBLL.Design;
-using RunnerBLL.Extension;
+using RunnerBLL.Checker;
 using RunnerBLL.Interface;
 using RunnerBLL.Resources;
-using RunnerBLL.Utility;
 using System.Collections;
-using System.Globalization;
 using System.Reflection;
-using System.Threading;
 
 namespace RunnerBLL.Validator
 {
@@ -15,10 +11,12 @@ namespace RunnerBLL.Validator
 	{
 		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+		public int ValidateSequence => 1;
+
 		public bool IsValid(Hashtable hashtable)
 		{
 			bool isValid = true;
-			logger.InfoFormat(RunnerResource.CultureSet, Thread.CurrentThread.CurrentUICulture.NativeName);
+			logger.InfoFormat(RunnerResource.CultureSet, CultureChecker.Instance.CurrentCulture.NativeName);
 			return isValid;
 		}
 	}

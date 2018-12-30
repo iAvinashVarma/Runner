@@ -147,10 +147,19 @@
   <data name="ProcessesCompleted" xml:space="preserve">
     <value>{0} process(s) ran successfully.</value>
   </data>
+  <data name="ProcessIsInvalid" xml:space="preserve">
+    <value>Process {0} is invalid.</value>
+  </data>
   <data name="UnableToRegisterProcess" xml:space="preserve">
     <value>Unable to register process {0}.</value>
   </data>
   <data name="UnableToRegisterProcesses" xml:space="preserve">
     <value>Unable to register process(s).</value>
+  </data>
+  <data name="NotRunningDueToInvalidState" xml:space="preserve">
+    <value>Not running {0}, due to invalid state.</value>
+  </data>
+  <data name="IssueWhileRunning" xml:space="preserve">
+    <value>Issue while running {0}.</value>
   </data>
 </root>

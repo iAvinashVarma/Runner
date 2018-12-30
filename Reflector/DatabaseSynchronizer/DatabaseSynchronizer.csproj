@@ -63,6 +63,7 @@
       <DependentUpon>DatabaseSynchronizerResource.resx</DependentUpon>
     </Compile>
     <Compile Include="Synchronize\MSSQLToMongo.cs" />
+    <Compile Include="Validator\DatabaseSynchronizerValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Middle\RunnerBLL\RunnerBLL.csproj">

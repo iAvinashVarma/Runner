@@ -41,9 +41,13 @@ namespace RunnerBLL.Design.Factory
 
 		public T LoadAssembly<T>(string assemblyName, string typeName)
 		{
+			return GetInstance<T>(GetAssembly(assemblyName), typeName);
+		}
+
+		public Assembly GetAssembly(string assemblyName)
+		{
 			string currentFolder = string.Format("{0}", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-			Assembly assembly = Assembly.LoadFrom(Path.Combine(currentFolder, string.Format("{0}.dll", assemblyName)));
-			return GetInstance<T>(assembly, typeName);
+			return Assembly.LoadFrom(Path.Combine(currentFolder, string.Format("{0}.dll", assemblyName)));
 		}
 
 		public T GetInstance<T>(Assembly assembly, string typeName)
@@ -64,6 +68,18 @@ namespace RunnerBLL.Design.Factory
 				.Select(s => (TSource)Activator.CreateInstance(s));
 		}
 
+		public IEnumerable<TSource> GetInstances<TSource, TExclude>(Assembly assembly)
+		{
+			return GetConcreteTypes<TSource>(assembly)
+				.Where(f => null != f.GetInterface(typeof(TSource).FullName) && f.Name != typeof(TExclude).Name)
+				.Select(s => (TSource)Activator.CreateInstance(s));
+		}
+
+		public IEnumerable<TSource> GetInstances<TSource, TExclude>(string assemblyName)
+		{
+			return GetInstances<TSource, TExclude>(GetAssembly(assemblyName));
+		}
+
 		public IEnumerable<T> GetInstances<T>()
 		{
 			return GetConcreteTypes<T>()
@@ -71,10 +87,29 @@ namespace RunnerBLL.Design.Factory
 				.Select(s => (T)Activator.CreateInstance(s));
 		}
 
+		public IEnumerable<T> GetInstances<T>(Assembly assembly)
+		{
+			return GetConcreteTypes<T>(assembly)
+				.Where(f => null != f.GetInterface(typeof(T).FullName))
+				.Select(s => (T)Activator.CreateInstance(s));
+		}
+
+		public IEnumerable<T> GetInstances<T>(string assemblyName)
+		{
+			return GetInstances<T>(GetAssembly(assemblyName));
+		}
+
+		public IEnumerable<Type> GetConcreteTypes<T>(Assembly assembly)
+		{
+			Type type = typeof(T);
+			return assembly.GetTypes()
+				.Where(t => type.IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
+		}
+
 		public IEnumerable<Type> GetConcreteTypes<T>()
 		{
-			var type = typeof(T);
-			var types = AppDomain.CurrentDomain.GetAssemblies()
+			Type type = typeof(T);
+			IEnumerable<Type> types = AppDomain.CurrentDomain.GetAssemblies()
 				.SelectMany(s => s.GetTypes())
 				.Where(t => type.IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
 			return types;

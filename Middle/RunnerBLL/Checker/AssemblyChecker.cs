@@ -16,10 +16,7 @@ namespace RunnerBLL.Checker
 				assembly = assembly ?? Assembly.GetEntryAssembly();
 				return assembly;
 			}
-			set
-			{
-				assembly = value;
-			}
+			set => assembly = value;
 		}
 
 		public string GUID
@@ -32,36 +29,12 @@ namespace RunnerBLL.Checker
 			}
 		}
 
-		public string AssemblyName
-		{
-			get
-			{
-				return Assembly.GetName().Name;
-			}
-		}
+		public string AssemblyName => Assembly.GetName().Name;
 
-		public FileVersionInfo AssemblyFileVersionInfo
-		{
-			get
-			{
-				return FileVersionInfo.GetVersionInfo(Assembly.Location);
-			}
-		}
+		public FileVersionInfo AssemblyFileVersionInfo => FileVersionInfo.GetVersionInfo(Assembly.Location);
 
-		public string AssemblyFileVersion
-		{
-			get
-			{
-				return AssemblyFileVersionInfo.FileVersion;
-			}
-		}
+		public string AssemblyFileVersion => AssemblyFileVersionInfo.FileVersion;
 
-		public string AssemblyCopyright
-		{
-			get
-			{
-				return AssemblyFileVersionInfo.LegalCopyright;
-			}
-		}
+		public string AssemblyCopyright => AssemblyFileVersionInfo.LegalCopyright;
 	}
 }

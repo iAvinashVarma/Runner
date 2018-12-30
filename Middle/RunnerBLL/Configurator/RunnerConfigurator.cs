@@ -1,25 +1,20 @@
 ﻿using RunnerBLL.Design;
+using RunnerBLL.Design.Factory;
 using RunnerBLL.Interface;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace RunnerBLL.Configurator
 {
-	public class RunnerConfigurator : SingletonBase<RunnerConfigurator>, IRunnerConfigurator
+	public class RunnerConfigurator : SingletonObserverBase<RunnerConfigurator, IRunnerConfigurator>, IRunnerConfigurator
 	{
+		public int ConfigureSequence => 0;
+
 		public void Configure(Hashtable hashtable)
 		{
-			var runnerDictionary = new Dictionary<int, IRunnerConfigurator>
-			{
-				{ 1, new LoggerConfigurator() },
-				{ 2, new CultureConfigurator() }
-			};
-			var runnerConfigurators = runnerDictionary.OrderBy(r => r.Key)
-									.Select(s => s.Value);
-			foreach (var runner in runnerConfigurators)
+			Attach(AssemblyFactory.Instance.GetInstances<IRunnerConfigurator, RunnerConfigurator>());
+			IOrderedEnumerable<IRunnerConfigurator> sequenceRunnerConfigurators = Entities.OrderBy(r => r.ConfigureSequence);
+			foreach (IRunnerConfigurator runner in sequenceRunnerConfigurators)
 			{
 				runner.Configure(hashtable);
 			}

@@ -19,7 +19,7 @@ namespace RunnerBLL.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class RunnerResource {
@@ -124,6 +124,24 @@ namespace RunnerBLL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Issue while running {0}..
+        /// </summary>
+        public static string IssueWhileRunning {
+            get {
+                return ResourceManager.GetString("IssueWhileRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not running {0}, due to invalid state..
+        /// </summary>
+        public static string NotRunningDueToInvalidState {
+            get {
+                return ResourceManager.GetString("NotRunningDueToInvalidState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} process is already running..
         /// </summary>
         public static string ProcessAlreadyRunning {
@@ -147,6 +165,15 @@ namespace RunnerBLL.Resources {
         public static string ProcessesCompleted {
             get {
                 return ResourceManager.GetString("ProcessesCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process {0} is invalid..
+        /// </summary>
+        public static string ProcessIsInvalid {
+            get {
+                return ResourceManager.GetString("ProcessIsInvalid", resourceCulture);
             }
         }
         

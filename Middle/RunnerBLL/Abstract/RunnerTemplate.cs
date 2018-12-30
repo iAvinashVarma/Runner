@@ -1,12 +1,14 @@
-﻿using RunnerBLL.Interface;
+﻿using log4net;
+using RunnerBLL.Interface;
 using System.Collections;
+using System.Reflection;
 
 namespace RunnerBLL.Abstract
 {
 	public abstract class RunnerTemplate<T> : IRunnerDecorator<T>
 	{
-		private IRunnerProcess _runnerProcess;
 		private readonly Hashtable _hashtable;
+		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
 		public RunnerTemplate(Hashtable hashtable)
 		{
@@ -15,16 +17,10 @@ namespace RunnerBLL.Abstract
 
 		public virtual void Run(T entity)
 		{
-			_runnerProcess = (IRunnerProcess)entity;
-			if (_hashtable == null)
+			IRunnerProcess runnerProcess = entity as IRunnerProcess;
+			if (runnerProcess != null)
 			{
-				return;
-			}
-
-			_runnerProcess.Hashtable = _hashtable;
-			if (_runnerProcess.Validate())
-			{
-				_runnerProcess.Run();
+				runnerProcess.Run(_hashtable);
 			}
 		}
 	}

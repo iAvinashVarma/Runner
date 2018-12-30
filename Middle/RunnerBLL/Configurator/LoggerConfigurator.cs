@@ -2,17 +2,15 @@
 using RunnerBLL.Interface;
 using RunnerBLL.Logger;
 using RunnerBLL.Utility;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace RunnerBLL.Configurator
 {
 	public class LoggerConfigurator : IRunnerConfigurator
 	{
+		public int ConfigureSequence => 1;
+
 		public void Configure(Hashtable hashtable)
 		{
 			if (hashtable.ContainsKey(Constants.Process))
@@ -20,9 +18,9 @@ namespace RunnerBLL.Configurator
 				string process = hashtable.GetValue(Constants.Process);
 				if (!string.IsNullOrEmpty(process))
 				{
-					var logFilePath = LogChecker.Instance.FilePath;
-					var fileDirectory = Path.GetDirectoryName(logFilePath);
-					var updateLogFilePath = Path.Combine(fileDirectory, process);
+					string logFilePath = LogChecker.Instance.FilePath;
+					string fileDirectory = Path.GetDirectoryName(logFilePath);
+					string updateLogFilePath = Path.Combine(fileDirectory, process);
 					LogChecker.Instance.FilePath = updateLogFilePath;
 				}
 			}
