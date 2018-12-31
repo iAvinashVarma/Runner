@@ -4,6 +4,7 @@ using RunnerBLL.Design.Factory;
 using RunnerBLL.Extension;
 using RunnerBLL.Interface;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,12 +16,18 @@ namespace RunnerBLL.Concrete
 		public RunnerBase()
 		{
 			var assembly = Assembly.GetCallingAssembly();
-			Attach(AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly));
+			var assemblies = AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly)
+							.Where(a => a.IsEnabled)
+							.OrderBy(o => o.ObserverSequence);
+			Attach(assemblies);
 		}
 
 		public RunnerBase(Assembly assembly)
 		{
-			Attach(AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly));
+			var assemblies = AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly)
+							.Where(a => a.IsEnabled)
+							.OrderBy(o => o.ObserverSequence);
+			Attach(assemblies.Where(a => a.IsEnabled).OrderBy(o => o.ObserverSequence));
 		}
 
 		public RunnerBase(IEnumerable<IRunnerObserver> observers)

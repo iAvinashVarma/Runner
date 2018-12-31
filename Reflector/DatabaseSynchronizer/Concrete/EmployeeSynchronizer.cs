@@ -9,6 +9,10 @@ namespace DatabaseSynchronizer.Concrete
 	{
 		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+		public int ObserverSequence => 4;
+
+		public bool IsEnabled => true;
+
 		public void Run()
 		{
 			logger.Info(DatabaseSynchronizerResource.EmployeeSynchronizer);
