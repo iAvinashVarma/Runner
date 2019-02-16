@@ -1,4 +1,6 @@
 ﻿using System.Configuration;
+using System.IO;
+using System.Reflection;
 
 namespace RunnerBLL.Configuration
 {
@@ -8,6 +10,16 @@ namespace RunnerBLL.Configuration
 		private const string DefaultPathValue = "runner.json";
 
 		[ConfigurationProperty(PathName, DefaultValue = DefaultPathValue, IsRequired = true)]
-		public string Path => (string)this[PathName];
+		public string RunnerPath
+		{
+			get
+			{
+				string applicationDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+				string pathName = (string)this[PathName];
+				string fileSettingsPath = Path.GetFullPath(pathName);
+				string filePath = File.Exists(fileSettingsPath) ? fileSettingsPath : Path.Combine(applicationDirectory, fileSettingsPath);
+				return filePath;
+			}
+		}
 	}
 }

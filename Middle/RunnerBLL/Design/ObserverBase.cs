@@ -10,7 +10,7 @@ namespace RunnerBLL.Design
 
 		public virtual void Attach(TObserver observer)
 		{
-			if (!Entities.Contains(observer))
+			if (observer != null && !Entities.Contains(observer))
 			{
 				Entities.Add(observer);
 			}
@@ -18,7 +18,7 @@ namespace RunnerBLL.Design
 
 		public virtual void Detach(TObserver observer)
 		{
-			Entities.RemoveWhere(e => e.Equals(observer));
+			Entities.RemoveWhere(e => observer != null && e.Equals(observer));
 		}
 
 		public virtual void Attach(IEnumerable<TObserver> observers)

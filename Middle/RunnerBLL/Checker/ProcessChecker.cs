@@ -12,17 +12,9 @@ namespace RunnerBLL.Checker
 		public bool IsSingleInstance(string processName = "")
 		{
 			bool result = false;
-			string name = string.IsNullOrEmpty(processName) ? AssemblyChecker.Instance.GUID : string.Format("{0}-{1}", AssemblyChecker.Instance.GUID, processName);
-			try
-			{
-				Mutex.OpenExisting(name);
-			}
-			catch (Exception ex)
-			{
-				Debug.WriteLine(ex);
-				Mutex = new Mutex(true, name);
-				result = true;
-			}
+			var guid = AssemblyChecker.Instance.GUID;
+			string name = string.IsNullOrEmpty(processName) ? guid : string.Format("{0}-{1}", guid, processName);
+			var mutex = new Mutex(true, name, out result);
 			return result;
 		}
 	}

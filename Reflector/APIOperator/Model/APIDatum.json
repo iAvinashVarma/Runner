@@ -1,0 +1,28 @@
+{
+	"datum": [
+		{
+			"name": "GetBiometric",
+			"type": "GET",
+			"url": "http://localhost:49236/api/Biometric",
+			"contentType": "json"
+		},
+		{
+			"name": "PostBiometric",
+			"type": "POST",
+			"url": "http://localhost:49236/api/Biometric",
+			"contentType": "json"
+		},
+		{
+			"name": "PutBiometric",
+			"type": "PUT",
+			"url": "http://localhost:49236/api/Biometric/{0}",
+			"contentType": "json"
+		},
+		{
+			"name": "DeleteBiometric",
+			"type": "DELETE",
+			"url": "http://localhost:49236/api/Biometric/{0}",
+			"contentType": "json"
+		}
+	]
+}

@@ -8,21 +8,38 @@ namespace RunnerBLL.Extension
 	{
 		public static void ForEach<TSource>(this IEnumerable<TSource> @enumeration, Action<TSource> action)
 		{
-			foreach (TSource item in @enumeration)
+			if (@enumeration != null)
 			{
-				action(item);
+				foreach (TSource item in @enumeration)
+				{
+					if (item != null)
+					{
+						action(item);
+					}
+				}
 			}
 		}
 
 		public static T DoAction<T>(this T @this, Action<string> action)
 		{
-			action.Invoke(null);
+			if (@this != null)
+			{
+				action.Invoke(null);
+			}
+
 			return @this;
 		}
 
 		public static string ToCSV<TSource>(this IEnumerable<TSource> @enumeration, Func<TSource, string> selector)
 		{
-			return string.Join(", ", @enumeration.Select(selector).ToArray());
+			string result = string.Empty;
+
+			if (@enumeration != null)
+			{
+				result = string.Join(", ", @enumeration.Select(selector).ToArray());
+			}
+
+			return result;
 		}
 	}
 }

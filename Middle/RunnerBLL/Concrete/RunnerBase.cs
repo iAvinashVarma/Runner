@@ -15,19 +15,15 @@ namespace RunnerBLL.Concrete
 	{
 		public RunnerBase()
 		{
-			var assembly = Assembly.GetCallingAssembly();
-			var assemblies = AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly)
-							.Where(a => a.IsEnabled)
-							.OrderBy(o => o.ObserverSequence);
-			Attach(assemblies);
+
 		}
 
 		public RunnerBase(Assembly assembly)
 		{
-			var assemblies = AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly)
+			IOrderedEnumerable<IRunnerObserver> observers = AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly)
 							.Where(a => a.IsEnabled)
 							.OrderBy(o => o.ObserverSequence);
-			Attach(assemblies.Where(a => a.IsEnabled).OrderBy(o => o.ObserverSequence));
+			Attach(observers);
 		}
 
 		public RunnerBase(IEnumerable<IRunnerObserver> observers)
@@ -80,7 +76,15 @@ namespace RunnerBLL.Concrete
 				}));
 			});
 
-			Task.WaitAll(createdTasks.ToArray());
+			if (createdTasks.Any())
+			{
+				Task.WaitAll(createdTasks.ToArray());
+			}
+		}
+
+		public void Clear()
+		{
+			Entities.Clear();
 		}
 	}
 

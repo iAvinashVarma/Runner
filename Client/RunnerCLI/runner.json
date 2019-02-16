@@ -5,6 +5,12 @@
 	"runner": {
 		"add": [
 			{
+				"process": "FileRenamer",
+				"type": "FileController.Renamer,FileController",
+				"enable": "true",
+				"sequence": "3"
+			},
+			{
 				"process": "APIOperator",
 				"type": "APIOperator.Operate.APIWorker,APIOperator",
 				"enable": "true",

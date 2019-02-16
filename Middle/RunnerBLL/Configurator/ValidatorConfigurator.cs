@@ -12,8 +12,8 @@ namespace RunnerBLL.Configurator
 
 		public void Configure(Hashtable hashtable)
 		{
-			IEnumerable<IRunnerValidator> observers = AssemblyFactory.Instance.GetInstances<IRunnerValidator, RunnerValidator>();
-			RunnerValidator.Instance.Attach(observers);
+			IEnumerable<IRunnerValidator> runnerValidators = AssemblyFactory.Instance.GetInstances<IRunnerValidator, RunnerValidator>();
+			RunnerValidator.Instance.Attach(runnerValidators);
 		}
 	}
 }

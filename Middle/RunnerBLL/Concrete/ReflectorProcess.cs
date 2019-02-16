@@ -7,7 +7,9 @@ using RunnerBLL.Interface;
 using RunnerBLL.Model;
 using RunnerBLL.Resources;
 using RunnerBLL.Utility;
+using System;
 using System.Collections;
+using System.IO;
 using System.Reflection;
 
 namespace RunnerBLL.Concrete
@@ -21,8 +23,8 @@ namespace RunnerBLL.Concrete
 		public void Run(Hashtable hashtable)
 		{
 			_hashtable = hashtable;
-			string filePath = ApplicationSettings.Instance.FileSettings.Path;
-			IDeserializer<RunnerEntity> deserializer = DataFactory.Instance.GetDeserializer<RunnerEntity>(filePath);
+			string filePath = ApplicationSettings.Instance.FileSettings.RunnerPath;
+			IDeserializer <RunnerEntity> deserializer = DataFactory.Instance.GetDeserializer<RunnerEntity>(filePath);
 			RunnerEntity runner = deserializer.GetEntity();
 			if (IsSingleProcess)
 			{

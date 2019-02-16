@@ -7,7 +7,7 @@ namespace RunnerBLL.Configuration
 	{
 		private const string RunSettingsName = "RunSettings";
 
-		public RunSettings RunSettings => ConfigurationManager.GetSection("RunSettings") as RunSettings;
+		public RunSettings RunSettings => ConfigurationManager.GetSection(RunSettingsName) as RunSettings;
 
 		public FileSettings FileSettings => RunSettings.FileSettings;
 	}

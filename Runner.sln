@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Table", "Table", "{B6CBC060
 		Scripts\SQL\Logger\Table\dbo.RunnerLog.sql = Scripts\SQL\Logger\Table\dbo.RunnerLog.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileController", "Reflector\FileController\FileController.csproj", "{C19D8C32-B25A-4E15-BC99-4E5F05FFDE68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{E7983699-2F77-498A-954B-1EE24C9EE5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7983699-2F77-498A-954B-1EE24C9EE5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7983699-2F77-498A-954B-1EE24C9EE5A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19D8C32-B25A-4E15-BC99-4E5F05FFDE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19D8C32-B25A-4E15-BC99-4E5F05FFDE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19D8C32-B25A-4E15-BC99-4E5F05FFDE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19D8C32-B25A-4E15-BC99-4E5F05FFDE68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{C410DDEA-D36A-4934-BE4E-781C995C5B78} = {FD1099C1-FFA8-4A89-8A22-C57C98D54E5D}
 		{7EE36303-EFEE-466F-ADA0-D6B036E005DE} = {C410DDEA-D36A-4934-BE4E-781C995C5B78}
 		{B6CBC060-516E-4411-8A72-5F58265B87C7} = {7EE36303-EFEE-466F-ADA0-D6B036E005DE}
+		{C19D8C32-B25A-4E15-BC99-4E5F05FFDE68} = {967158EE-102E-4DA7-A8A4-D1A50AD8F87A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D90CE9FA-E170-476E-BC19-A9B0DE75E613}

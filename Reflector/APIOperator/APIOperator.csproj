@@ -34,6 +34,9 @@
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\LoginOperation.cs" />
+    <Compile Include="Concrete\APIOperation.cs" />
     <Compile Include="Concrete\Operation.cs" />
     <Compile Include="Concrete\RegistrationOperation.cs" />
+    <Compile Include="Model\APIModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Operate\APIWorker.cs" />
     <Compile Include="Resources\APIOperatorResource.es-ES.Designer.cs">
@@ -58,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>APIOperatorResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\Constants.cs" />
     <Compile Include="Validator\OperatorValidator.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +83,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model\APIDatum.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

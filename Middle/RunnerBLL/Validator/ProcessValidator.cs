@@ -29,7 +29,7 @@ namespace RunnerBLL.Validator
 		{
 			bool isValid = true;
 			_hashtable = hashtable;
-			string filePath = ApplicationSettings.Instance.FileSettings.Path;
+			string filePath = ApplicationSettings.Instance.FileSettings.RunnerPath;
 			IDeserializer<RunnerEntity> deserializer = DataFactory.Instance.GetDeserializer<RunnerEntity>(filePath);
 			RunnerEntity runner = deserializer.GetEntity();
 			if (IsSingleProcess)
