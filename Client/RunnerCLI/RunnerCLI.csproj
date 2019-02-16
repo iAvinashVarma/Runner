@@ -71,6 +71,8 @@
     <None Include="Sample\DatabaseSynchronizer.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Sample\FileRenamer.bat" />
+    <None Include="Sample\FileRenamer.es-ES.bat" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Middle\RunnerBLL\RunnerBLL.csproj">
