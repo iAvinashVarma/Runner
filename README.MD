@@ -17,7 +17,6 @@ Runner is .NET Framework console application which can be used for batch process
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=iAvinashVarma_Runner&metric=security_rating)](https://sonarcloud.io/dashboard?id=iAvinashVarma_Runner)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=iAvinashVarma_Runner&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=iAvinashVarma_Runner)
 
-
 ---
 
 ## IDE
