@@ -7,16 +7,16 @@ namespace RunnerBLL.Checker
 {
 	public class AssemblyChecker : SingletonBase<AssemblyChecker>
 	{
-		private Assembly assembly;
+		private Assembly _assembly;
 
 		public Assembly Assembly
 		{
 			get
 			{
-				assembly = assembly ?? Assembly.GetEntryAssembly();
-				return assembly;
+				_assembly = _assembly ?? Assembly.GetEntryAssembly();
+				return _assembly;
 			}
-			set => assembly = value;
+			set => _assembly = value;
 		}
 
 		public string GUID

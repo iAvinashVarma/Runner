@@ -7,7 +7,7 @@ namespace RunnerBLL.Abstract
 	{
 		public FileEntity FileEntity { get; set; }
 
-		public Deserializer(string filePath)
+		protected Deserializer(string filePath)
 		{
 			FileEntity = new FileEntity(filePath);
 		}

@@ -12,6 +12,8 @@ namespace RunnerCLI
 	{
 		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
+		protected Program() { }
+
 		private static void Main(string[] args)
 		{
 			try
