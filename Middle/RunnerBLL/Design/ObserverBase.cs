@@ -6,7 +6,7 @@ namespace RunnerBLL.Design
 {
 	public abstract class ObserverBase<TObserver>
 	{
-		public readonly HashSet<TObserver> Entities = new HashSet<TObserver>();
+		public HashSet<TObserver> Entities { get; set; } = new HashSet<TObserver>();
 
 		public virtual void Attach(TObserver observer)
 		{
