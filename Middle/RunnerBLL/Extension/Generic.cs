@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -35,7 +36,10 @@ namespace RunnerBLL.Extension
 			{
 				enumValue = (T)Enum.Parse(typeof(T), value, true);
 			}
-			catch { }
+			catch(Exception ex)
+			{
+				Debug.WriteLine(ex);
+			}
 			return enumValue;
 		}
 
