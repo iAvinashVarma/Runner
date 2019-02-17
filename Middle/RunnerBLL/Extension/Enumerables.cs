@@ -30,13 +30,13 @@ namespace RunnerBLL.Extension
 			return @this;
 		}
 
-		public static string ToCSV<TSource>(this IEnumerable<TSource> @enumeration, Func<TSource, string> selector)
+		public static string ToCSV<TSource>(this IEnumerable<TSource> @enumeration, Func<TSource, string> selector, string seperator = ",")
 		{
 			string result = string.Empty;
 
 			if (@enumeration != null)
 			{
-				result = string.Join(", ", @enumeration.Select(selector).ToArray());
+				result = string.Join(seperator, @enumeration.Select(selector).ToArray());
 			}
 
 			return result;

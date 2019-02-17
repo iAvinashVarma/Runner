@@ -57,6 +57,7 @@
     <Compile Include="Configurator\ValidatorConfigurator.cs" />
     <Compile Include="Design\ObserverBase.cs" />
     <Compile Include="Design\SingletonObserverBase.cs" />
+    <Compile Include="Extension\DateTimeExtension.cs" />
     <Compile Include="Interface\IReflectorValidator.cs" />
     <Compile Include="Interface\IRunnerConfigurator.cs" />
     <Compile Include="Logger\Appender\RollingFileAppender.cs" />
