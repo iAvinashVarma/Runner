@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace RunnerBLLTests
 {
@@ -51,13 +52,14 @@ namespace RunnerBLLTests
 				DataTable dataTable = ds.Tables[0];
 				if (dataTable != null)
 				{
+					DateTimeFormatInfo dateTimeFormatInfo = CultureInfo.CurrentCulture.DateTimeFormat;
 					DataRow dataRow = dataTable.Rows[0];
 					reportDateLog = new ReportDateLog
 					{
-						Id = Convert.ToInt32(dataRow["Id"].ToString()),
-						LastGeneratedTimestamp = Convert.ToDateTime(dataRow["LastGeneratedTimestamp"].ToString()),
-						ReportFileTypeId = Convert.ToInt32(dataRow["ReportFileTypeId"].ToString()),
-						TimeRange = Convert.ToInt16(dataRow["TimeRange"].ToString())
+						Id = (int)dataRow["Id"],
+						LastGeneratedTimestamp = (DateTime)dataRow["LastGeneratedTimestamp"],
+						ReportFileTypeId = (int)dataRow["ReportFileTypeId"],
+						TimeRange = (short)dataRow["TimeRange"]
 					};
 				}
 			}
@@ -66,6 +68,7 @@ namespace RunnerBLLTests
 				DateTime startDate = reportDateLog.LastGeneratedTimestamp;
 				DateTime endDate = reportDateLog.LastGeneratedTimestamp.AddMinutes(reportDateLog.TimeRange);
 				DateTime currentDate = DateTime.Now;
+				// Debug.WriteLine("{0:dd.MM.yyyy HH:mm:ss} {1:dd.MM.yyyy HH:mm:ss} {2:dd.MM.yyyy HH:mm:ss}", startDate, endDate, currentDate);
 				if (currentDate > startDate && currentDate < endDate)
 				{
 					Debug.WriteLine("Should not run and skip the process.");
