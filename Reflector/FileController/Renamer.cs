@@ -27,7 +27,7 @@ namespace FileController
 					string oldFileName = file.FullName;
 					if (!Path.HasExtension(file.FullName))
 					{
-						string newFileName = string.Format("{0}.{1}", file.FullName, ".mp4");
+						string newFileName = string.Format("{0}.{1}", file.FullName, extension);
 						File.Move(oldFileName, newFileName);
 					}
 				});
