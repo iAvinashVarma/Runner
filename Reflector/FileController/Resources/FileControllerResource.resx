@@ -117,7 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ProvideInfo" xml:space="preserve">
+  <data name="ProvideDirectoryOrExtension" xml:space="preserve">
     <value>Please provide directory and extension.</value>
+  </data>
+  <data name="ProvideZipProperties" xml:space="preserve">
+    <value>Please provide zip extractor properties.</value>
   </data>
 </root>

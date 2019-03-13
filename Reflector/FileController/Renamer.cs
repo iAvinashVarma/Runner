@@ -34,7 +34,7 @@ namespace FileController
 			}
 			else
 			{
-				logger.Warn(FileControllerResource.ProvideInfo);
+				logger.Warn(FileControllerResource.ProvideDirectoryOrExtension);
 			}
 		}
 	}

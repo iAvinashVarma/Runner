@@ -5,6 +5,12 @@
 	"runner": {
 		"add": [
 			{
+				"process": "ZipExtractor",
+				"type": "FileController.ZipExtractor,FileController",
+				"enable": "true",
+				"sequence": "3"
+			},
+			{
 				"process": "FileRenamer",
 				"type": "FileController.Renamer,FileController",
 				"enable": "true",

@@ -63,9 +63,18 @@ namespace FileController.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Please provide directory and extension..
         /// </summary>
-        internal static string ProvideInfo {
+        internal static string ProvideDirectoryOrExtension {
             get {
-                return ResourceManager.GetString("ProvideInfo", resourceCulture);
+                return ResourceManager.GetString("ProvideDirectoryOrExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please provide zip extractor properties..
+        /// </summary>
+        internal static string ProvideZipProperties {
+            get {
+                return ResourceManager.GetString("ProvideZipProperties", resourceCulture);
             }
         }
     }
