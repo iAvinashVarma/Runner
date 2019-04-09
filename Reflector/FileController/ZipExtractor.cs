@@ -19,7 +19,7 @@ namespace FileController
 		public void Run(Hashtable Hashtable)
 		{
 			string zipPath = string.Format("{0}", Hashtable[key: Constants.ZipPath]);
-			string zipPassword = string.Format("{0}", Hashtable[key: Constants.ZipPassword]);
+			string zipPassword = string.Empty;
 			if (!new string[] { zipPath }.IsNullOrEmpty())
 			{
 				FileInfo zipFileInfo = new FileInfo(zipPath);

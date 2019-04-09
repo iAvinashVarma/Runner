@@ -7,7 +7,5 @@
 		public const string Extension = "Extension";
 
 		public const string ZipPath = "ZipPath";
-
-		public const string ZipPassword = "Password";
 	}
 }
