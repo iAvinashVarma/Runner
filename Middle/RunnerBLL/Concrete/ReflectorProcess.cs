@@ -28,17 +28,17 @@ namespace RunnerBLL.Concrete
 			RunnerEntity runner = deserializer.GetEntity();
 			if (IsSingleProcess)
 			{
-				RunSingleProcess(runner);
+				RunSingleProcess();
 			}
 			else
 			{
-				RunMultiProcesses(runner);
+				RunMultiProcesses();
 			}
 		}
 
 		private bool IsSingleProcess => _hashtable.ContainsKey(Constants.Process);
 
-		private void RunSingleProcess(RunnerEntity runnerEntity)
+		private void RunSingleProcess()
 		{
 			string process = _hashtable.GetValue(Constants.Process);
 			if (runnerWork.Count > 0)
@@ -53,7 +53,7 @@ namespace RunnerBLL.Concrete
 			}
 		}
 
-		private void RunMultiProcesses(RunnerEntity runnerEntity)
+		private void RunMultiProcesses()
 		{
 			if (runnerWork.Count > 0)
 			{

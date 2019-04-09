@@ -11,12 +11,12 @@ namespace RunnerBLL.Design.Factory
 	{
 		public T GetClass<T>(string className, string returnType)
 		{
-			return (T)Activator.CreateInstance(Type.GetType(Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name.EndsWith(className)).FirstOrDefault().FullName), new object[] { returnType });
+			return (T)Activator.CreateInstance(Type.GetType(Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.EndsWith(className)).FullName), new object[] { returnType });
 		}
 
 		public T GetReturnClass<T>(string className)
 		{
-			return (T)Assembly.Load(Assembly.GetExecutingAssembly().FullName).CreateInstance(Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name.EndsWith(className)).FirstOrDefault().FullName);
+			return (T)Assembly.Load(Assembly.GetExecutingAssembly().FullName).CreateInstance(Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(t => t.Name.EndsWith(className)).FullName);
 		}
 
 		public T LoadAssembly<T>(string assemblyInfo)
@@ -47,7 +47,8 @@ namespace RunnerBLL.Design.Factory
 		public Assembly GetAssembly(string assemblyName)
 		{
 			string currentFolder = string.Format("{0}", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
-			return Assembly.LoadFrom(Path.Combine(currentFolder, string.Format("{0}.dll", assemblyName)));
+			string assemblyFile = Path.Combine(currentFolder, string.Format("{0}.dll", assemblyName));
+			return Assembly.LoadFrom(assemblyFile);
 		}
 
 		public T GetInstance<T>(Assembly assembly, string typeName)

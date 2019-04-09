@@ -10,7 +10,7 @@ namespace RunnerBLL.Concrete
 {
 	public class RunnerWork<T> : SingletonObserverBase<RunnerWork<T>, T>
 	{
-		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+		private readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
 		public void Run<P>(Hashtable hashtable)
 		{

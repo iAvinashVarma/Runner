@@ -13,12 +13,12 @@ namespace RunnerBLL.Concrete
 {
 	public abstract class RunnerBase : ObserverBase<IRunnerObserver>
 	{
-		public RunnerBase()
+		protected RunnerBase()
 		{
 
 		}
 
-		public RunnerBase(Assembly assembly)
+		protected RunnerBase(Assembly assembly)
 		{
 			IOrderedEnumerable<IRunnerObserver> observers = AssemblyFactory.Instance.GetInstances<IRunnerObserver>(assembly)
 							.Where(a => a.IsEnabled)
@@ -26,7 +26,7 @@ namespace RunnerBLL.Concrete
 			Attach(observers);
 		}
 
-		public RunnerBase(IEnumerable<IRunnerObserver> observers)
+		protected RunnerBase(IEnumerable<IRunnerObserver> observers)
 		{
 			Attach(observers);
 		}

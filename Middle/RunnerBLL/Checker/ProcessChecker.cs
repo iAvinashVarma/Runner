@@ -14,7 +14,7 @@ namespace RunnerBLL.Checker
 			bool result = false;
 			var guid = AssemblyChecker.Instance.GUID;
 			string name = string.IsNullOrEmpty(processName) ? guid : string.Format("{0}-{1}", guid, processName);
-			var mutex = new Mutex(true, name, out result);
+			new Mutex(true, name, out result);
 			return result;
 		}
 	}

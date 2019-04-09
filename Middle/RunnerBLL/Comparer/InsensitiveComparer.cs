@@ -4,7 +4,7 @@ namespace RunnerBLL.Comparer
 {
 	public class InsensitiveComparer : IEqualityComparer
 	{
-		private CaseInsensitiveComparer _comparer = new CaseInsensitiveComparer();
+		private readonly CaseInsensitiveComparer _comparer = new CaseInsensitiveComparer();
 
 		public int GetHashCode(object obj)
 		{
