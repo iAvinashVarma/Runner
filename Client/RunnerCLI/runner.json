@@ -5,10 +5,16 @@
 	"runner": {
 		"add": [
 			{
+				"process": "GenerateMultiWorksheet",
+				"type": "ExcelController.MultiWorksheet,ExcelController",
+				"enable": "true",
+				"sequence": "4"
+			},
+			{
 				"process": "ZipExtractor",
 				"type": "FileController.ZipExtractor,FileController",
 				"enable": "true",
-				"sequence": "3"
+				"sequence": "4"
 			},
 			{
 				"process": "FileRenamer",

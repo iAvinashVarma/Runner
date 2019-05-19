@@ -13,6 +13,7 @@ namespace RunnerBLL.Design.Factory
 			switch (fileEntity.FileType)
 			{
 				case FileType.XML:
+					deserializer = new XmlDeserializer<T>(filePath);
 					break;
 
 				case FileType.JSON:

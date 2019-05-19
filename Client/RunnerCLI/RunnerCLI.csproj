@@ -59,6 +59,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
+    <None Include="Sample\GenerateMultiWorksheet.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Sample\APIOperator.es-ES.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -86,6 +89,10 @@
     <ProjectReference Include="..\..\Reflector\DatabaseSynchronizer\DatabaseSynchronizer.csproj">
       <Project>{e7983699-2f77-498a-954b-1ee24c9ee5a1}</Project>
       <Name>DatabaseSynchronizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Reflector\ExcelController\ExcelController.csproj">
+      <Project>{824567d9-ff76-48d0-81e7-fa506197a64c}</Project>
+      <Name>ExcelController</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Reflector\FileController\FileController.csproj">
       <Project>{c19d8c32-b25a-4e15-bc99-4e5f05ffde68}</Project>
