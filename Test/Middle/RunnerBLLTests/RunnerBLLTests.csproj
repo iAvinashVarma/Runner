@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="AdventureWorksIntegrationTest.cs" />
     <Compile Include="Model\ReportDateLog.cs" />
+    <Compile Include="ProcessUtilityTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

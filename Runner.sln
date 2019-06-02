@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataDrivenTests", "Test\Mid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelController", "Reflector\ExcelController\ExcelController.csproj", "{824567D9-FF76-48D0-81E7-FA506197A64C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationController", "Reflector\IntegrationController\IntegrationController.csproj", "{6E6A8FFA-9F67-43D6-B7F4-13ED40B3D9B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,10 @@ Global
 		{824567D9-FF76-48D0-81E7-FA506197A64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{824567D9-FF76-48D0-81E7-FA506197A64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{824567D9-FF76-48D0-81E7-FA506197A64C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E6A8FFA-9F67-43D6-B7F4-13ED40B3D9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E6A8FFA-9F67-43D6-B7F4-13ED40B3D9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E6A8FFA-9F67-43D6-B7F4-13ED40B3D9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E6A8FFA-9F67-43D6-B7F4-13ED40B3D9B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{624BF3BF-1092-46BB-84AD-DE48FFDCF033} = {8268A682-CB10-418F-B2EF-657D0EBF1C81}
 		{A62BB78A-40C2-4BEE-AE3F-92A1782E83CA} = {8268A682-CB10-418F-B2EF-657D0EBF1C81}
 		{824567D9-FF76-48D0-81E7-FA506197A64C} = {967158EE-102E-4DA7-A8A4-D1A50AD8F87A}
+		{6E6A8FFA-9F67-43D6-B7F4-13ED40B3D9B6} = {967158EE-102E-4DA7-A8A4-D1A50AD8F87A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D90CE9FA-E170-476E-BC19-A9B0DE75E613}

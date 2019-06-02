@@ -5,10 +5,16 @@
 	"runner": {
 		"add": [
 			{
+				"process": "DataTransformation",
+				"type": "IntegrationController.DataTransform,IntegrationController",
+				"enable": "true",
+				"sequence": "6"
+			},
+			{
 				"process": "GenerateMultiWorksheet",
 				"type": "ExcelController.MultiWorksheet,ExcelController",
 				"enable": "true",
-				"sequence": "4"
+				"sequence": "5"
 			},
 			{
 				"process": "ZipExtractor",

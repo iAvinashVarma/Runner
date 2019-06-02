@@ -51,6 +51,8 @@
     <Compile Include="Abstract\RunnerTemplate.cs" />
     <Compile Include="Checker\AssemblyChecker.cs" />
     <Compile Include="Checker\CultureChecker.cs" />
+    <Compile Include="Concrete\ProcessUtility.cs" />
+    <Compile Include="Concrete\DTExecUtility.cs" />
     <Compile Include="Concrete\XmlDeserializer.cs" />
     <Compile Include="Configurator\CultureConfigurator.cs" />
     <Compile Include="Configurator\LoggerConfigurator.cs" />
@@ -59,6 +61,7 @@
     <Compile Include="Design\ObserverBase.cs" />
     <Compile Include="Design\SingletonObserverBase.cs" />
     <Compile Include="Extension\DateTimeExtension.cs" />
+    <Compile Include="Extension\DictionaryExtension.cs" />
     <Compile Include="Interface\IReflectorValidator.cs" />
     <Compile Include="Interface\IRunnerConfigurator.cs" />
     <Compile Include="Logger\Appender\RollingFileAppender.cs" />

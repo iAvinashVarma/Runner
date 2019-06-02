@@ -98,6 +98,10 @@
       <Project>{c19d8c32-b25a-4e15-bc99-4e5f05ffde68}</Project>
       <Name>FileController</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Reflector\IntegrationController\IntegrationController.csproj">
+      <Project>{6e6a8ffa-9f67-43d6-b7f4-13ed40b3d9b6}</Project>
+      <Name>IntegrationController</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Runner.ico" />
