@@ -10,7 +10,7 @@ namespace IntegrationController
 	{
 		public void Run(Hashtable Hashtable)
 		{
-			var fileProcessor = new FileProcessor();
+			var fileProcessor = new FileProcessor(Hashtable);
 			fileProcessor.Start();
 		}
 	}

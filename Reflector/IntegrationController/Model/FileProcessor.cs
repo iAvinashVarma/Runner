@@ -1,6 +1,8 @@
 ﻿using IntegrationController.Interface;
+using log4net;
 using RunnerBLL.Concrete;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -12,7 +14,13 @@ namespace IntegrationController.Model
 	public class FileProcessor
 	{
 		private const string FilePath = @"C:\PROGRA~1\MICROS~1\150\DTS\Binn\DTExec.exe";
-		private const string DtsxPackagePath = @"E:\Practice\SSIS\PackageSamples\FileTransform.dtsx";
+		private readonly string DtsxPackagePath = string.Empty;
+		private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+		public FileProcessor(Hashtable hashtable)
+		{
+			DtsxPackagePath = hashtable["Package"].ToString();
+		}
 
 		public void Start()
 		{
@@ -36,6 +44,14 @@ namespace IntegrationController.Model
 			};
 			string result = string.Empty;
 			int returnCode = utility.TryExecute(out result);
+			if (returnCode == 0)
+			{
+				logger.Info(result);
+			}
+			else
+			{
+				logger.Warn(result);
+			}
 		}
 
 		public Dictionary<FileInfo, HashSet<IFileIntegration>> GetFileIntegrations()
